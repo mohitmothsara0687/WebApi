@@ -1,0 +1,11 @@
+﻿select r.id,r.age,wc.name 'work_class',el.name 'education_level',r.education_num,ms.name 'marital_status',o.name 'occupation',rl.name 'relationship',
+rc.name 'race',sx.name 'sex',r.capital_gain,r.capital_loss,r.hours_week,c.name 'country_name',r.over_50k from 
+records as r 
+left join workclasses as wc on r.workclass_id = wc.id
+left join education_levels as el on r.education_level_id = el.id
+left join marital_statuses as ms on r.marital_status_id = ms.id
+left join occupations as o on r.occupation_id = o.id
+left join relationships as rl on r.relationship_id = rl.id
+left join races as rc on r.race_id = rc.id
+left join sexes as sx on r.sex_id = sx.id
+left join countries as c on r.country_id = c.id;
